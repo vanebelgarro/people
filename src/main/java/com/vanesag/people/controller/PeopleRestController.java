@@ -20,7 +20,7 @@ import com.vanesag.people.service.PeopleService;
 
 //Indiciamos que es un controlador rest
 @RestController
-@RequestMapping("/") //esta sera la raiz de la url, es decir http://127.0.0.1:8080/api/
+@RequestMapping("/") //esta sera la raiz de la url, es decir http://127.0.0.1:8083/
 
 public class PeopleRestController {
 	//Inyectamos el servicio para poder hacer uso de el
@@ -28,7 +28,7 @@ public class PeopleRestController {
     private PeopleService PeopleService;
     
     /*Este método se hará cuando por una petición POST (como indica la anotación) se llame a la url
-    http://127.0.0.1:8080/api/users/  */
+    http://127.0.0.1:8083/crearcliente  */
     @PostMapping("crearcliente")
     public People addPeople(@RequestBody People people) {
         people.setId(0);
@@ -38,7 +38,7 @@ public class PeopleRestController {
     }
     
     /*Este método se hará cuando por una petición GET (como indica la anotación) se llame a la url 
-    http://127.0.0.1:8080/api/users*/
+    http://127.0.0.1:8083/listclientes*/
     @GetMapping("/listclientes")
     public List<People> listarPersonas(){
         //retornará todos los usuarios
@@ -46,7 +46,7 @@ public class PeopleRestController {
     }
     
     /*Este método se hará cuando por una petición GET (como indica la anotación) se llame a la url 
-    http://127.0.0.1:8080/api/users*/
+    http://127.0.0.1:8083/kpideclientes*/
     @GetMapping("/kpideclientes")
     public Statistics listarEstadisticos(){
         //retornará todos los usuarios
